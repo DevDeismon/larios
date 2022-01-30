@@ -5,46 +5,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 /**
 * User
 */
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 @Entity
 public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@NotBlank(message = "User's email cannot be empty.")
-	@Email	
-	private String email;
-	@NotNull
+	@NotBlank
+	@Email
+	private String email; 
 	private Boolean manager;
-	@NotNull(message = "User's name cannot be empty.")
-	@Size(min=6, max=30)
+	@NotBlank
+	@Size(min = 2, message = "El nombre a de contener como minimo 2 caracteres")
 	private String name;
-	@NotNull(message = "User's telefon cannot be empty.")
-	@Size(min=9)
-	private Integer tel;
-	@NotNull(message = "User's dni cannot be empty.")
-	@Size(min=9)
+	@NotEmpty
+	@Size(min = 9, message = "El telefono a de contener como minimo 9 digitos")
+	private String tel;
+	@NotBlank
+	@Size(min = 9, message = "El DNI debe contener 9 digitos y una letra")
 	private String dni;
-	@NotNull(message = "User's password cannot be empty.")
-	@Size(min = 3)
+	@NotBlank
+	@Size(min = 8, message = "La contraseña debe tener como minimo 8 caracteres o digitos")
 	private String pass;
 
 	public User(){}
 
-	public User (String name,String dni,Integer tel, String email, String pass,Boolean manager){
-		this.dni=dni;
-		this.name=name;
-		this.tel=tel;
-		this.email=email;
-		this.manager=manager;
-		this.pass=pass;
-	}
 	public String getDni() {
 		return dni;
 	}
@@ -54,7 +45,8 @@ public class User {
 	public String getName() {
 		return name;
 	}
-	public Integer getTel() {
+	
+	public String getTel() {
 		return tel;
 	}
 	public String getEmail() {
@@ -69,7 +61,7 @@ public class User {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
-	public void setTel(Integer tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 	public void setName(String name) {

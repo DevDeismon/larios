@@ -27,43 +27,43 @@
                     <p>Please enter the information</p>
 
                     <div class="form-outline mb-4">
-                      <input type="text" ith:field="*{name}" id="form2Example11" class="form-control"
-                        placeholder="Name" />
                       <label class="form-label" for="form2Example11">Name</label>
-                      <label th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}">error name</label>
+                      <input type="text" th:field="*{name}" id="form2Example11" class="form-control"
+                        placeholder="Name" />
+                      <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}">error name</label>
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="text" th:field="*{dni}" id="form2Example11" class="form-control" placeholder="DNI" />
                       <label class="form-label" for="form2Example11">DNI</label>
+                      <input type="text" th:field="*{dni}" id="form2Example11" class="form-control" placeholder="DNI" />
                       <label th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}">error dni</label>
                     </div>
 
                     <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example11">Email</label>
                       <input type="email" th:field="*{email}" id="form2Example11" class="form-control"
                         placeholder="Email address" />
-                      <label class="form-label" for="form2Example11">Email</label>
                       <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error email</label>
                     </div>
 
                     <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example22">Telefon</label>
                       <input type="text" th:field="*{tel}" id="form2Example22" class="form-control"
                         placeholder="telefon" />
-                      <label class="form-label" for="form2Example22">Telefon</label>
                       <label th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}">error telefon</label>
                     </div>
 
                     <div class="form-outline mb-4">
+                      <label class="form-label" for="form2Example22">Chose password</label>
                       <input type="password" th:field="*{pass}" id="form2Example22" class="form-control"
                         placeholder="Password" />
-                      <label class="form-label" for="form2Example22">Chose password</label>
                       <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}">error password</label>
                     </div>
 
                     <div class="form-check form-switch">
+                      <label class="form-check-label" for="flexSwitchCheckDefault">Manager</label>
                       <input th:field="*{manager}" class="form-check-input" type="checkbox" role="switch"
                         id="flexSwitchCheckDefault">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Manager</label>
                       <label th:if="${#fields.hasErrors('manager')}" th:errors="*{manager}"></label>
                     </div>
 
