@@ -1,4 +1,4 @@
-package com.cide.larios.dataAccess;
+package com.cide.larios.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

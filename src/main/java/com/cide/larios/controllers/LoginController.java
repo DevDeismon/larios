@@ -1,5 +1,6 @@
 package com.cide.larios.controllers;
-import com.cide.larios.dataAccess.*;
+import com.cide.larios.repo.UserRepository;
+import com.cide.larios.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

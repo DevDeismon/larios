@@ -1,7 +1,8 @@
 package com.cide.larios.controllers;
 
 
-import com.cide.larios.dataAccess.*;
+import com.cide.larios.repo.*;
+import com.cide.larios.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

@@ -1,7 +1,7 @@
-package com.cide.larios.dataAccess;
+package com.cide.larios.repo;
 
 import org.springframework.data.repository.CrudRepository;
-
+import com.cide.larios.model.User;
 /**
 * UserRepository
 */
