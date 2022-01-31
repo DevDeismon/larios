@@ -1,10 +1,11 @@
 package com.cide.larios.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 /**
 * TablesController
+* Clase encargada de mostrar el mapa de mesas del restaurante
 */
-import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TablesController {
 	

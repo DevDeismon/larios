@@ -2,7 +2,9 @@ package com.cide.larios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+/**
+ * Clase principal donde se inicializa el programa.
+ * */
 @SpringBootApplication
 public class LariosApplication {
 

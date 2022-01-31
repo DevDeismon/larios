@@ -1,6 +1,5 @@
 package com.cide.larios.sevices;
 
-import java.util.List;
 
 import com.cide.larios.model.*;
 import com.cide.larios.repo.UserRepository;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 /**
 * UserService
+* Esta clase ofrece metodos para poder agilizar el flujo de trabajo y evitar repetir codigo en distintos puntos del programa
 */
 @Service
 public class UserService {

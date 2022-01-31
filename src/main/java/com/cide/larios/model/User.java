@@ -7,13 +7,14 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 /**
 * User
+* Esta clase contiene todos los atributos de un ingrediente y hace de paso intermedio entre el programa y la DB.
 */
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 @Entity
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
