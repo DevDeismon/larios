@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,20 +34,18 @@ public class LoginController {
 	 * En caso de ser correctos se comprueba si en un encargado o no y redirigimos al usuario a su correspondiente vista.
 	*/
 	@PostMapping("/login")
-	public String loginSubmit(@Validated @ModelAttribute User user, BindingResult bindingResult, Model model){
-		if (bindingResult.hasErrors()) {
-			return "/login";
-		} 
+	public String loginSubmit( @ModelAttribute User user, BindingResult bindingResult, Model model){
 		String pass=user.getPass();
 		User u=userRepository.findByEmail(user.getEmail());
 		if (u!=null) {
 			if (u.getPass().equals(pass)) {
 				if(u.getManager()){
-					return "/main";
+					return "main";
 				}else{
-					return "/mainUser";
+					return "mainUser";
 				}
-			}	
-		}	
+			}
+		}
+		return "login";
 	}
 }
