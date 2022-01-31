@@ -1,3 +1,7 @@
+<!-- 
+    Este recurso html se encarga de "renderizar" un formulario de acceso a nuestra plataforma.
+    Se encarga de recoger los datos introducidos por el usuario y enviarlos por metodo Post a la aplicación para que procese los datos.
+    Todo esto es posible gracias al uso de la extensión thymelaf, que nos permite la comunicación entre Java y Html-->
 <!doctype html>
 <html xmlns:th="https://www.thymelaf.org">
 <html lang="en">
@@ -37,12 +41,14 @@
                       <input type="email" th:field="*{email}" id="form2Example11" class="form-control"
                         placeholder="Email address" />
                       <label class="form-label" for="form2Example11">Username</label>
+                      <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error name</label>
                     </div>
 
                     <div class="form-outline mb-4">
                       <input type="password" th:field="*{pass}" id="form2Example22" class="form-control"
                         placeholder="Password" />
                       <label class="form-label" for="form2Example22">Password</label>
+                      <label th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}">error name</label>
                     </div>
                     <div class="text-center pt-1 mb-5 pb-1">
                       <a class="text-muted" href="#!">Forgot password?</a>

@@ -5,9 +5,12 @@ import com.cide.larios.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
 
 /**
 * LoginController
@@ -32,7 +35,10 @@ public class LoginController {
 	 * En caso de ser correctos se comprueba si en un encargado o no y redirigimos al usuario a su correspondiente vista.
 	*/
 	@PostMapping("/login")
-	public String loginSubmit(@ModelAttribute User user, Model model){
+	public String loginSubmit(@Validated @ModelAttribute User user, BindingResult bindingResult, Model model){
+		if (bindingResult.hasErrors()) {
+			return "/login";
+		} 
 		String pass=user.getPass();
 		User u=userRepository.findByEmail(user.getEmail());
 		if (u!=null) {
@@ -43,7 +49,6 @@ public class LoginController {
 					return "/mainUser";
 				}
 			}	
-		}
-		return "login";
+		}	
 	}
 }
