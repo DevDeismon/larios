@@ -1,4 +1,8 @@
 # LARIOS
+ 
+### IMPORTANTE!!! 
+La aplicación no funcionara sin la base de datos.
+
 1. Para poder lograr que la aplicación funcione, primero hay que cargar los datos del archivo larios.sql que esta alojado en la raiz del proyecto.
 2. Una vez cargado la DB, hay que cambiar las credenciales de acceso, esto se encuentra en la siguiente ruta:
 `/src/main/resources/application.properties`
